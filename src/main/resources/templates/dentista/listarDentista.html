@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <h1 style="text-align: center;">Lista de Dentistas</h1>
+    <h3 style="text-align: center;"><a href="/dentistas/criar">Cadastrar</a></h3>
+
+    <!-- Tabela para exibir os dentistas cadastrados-->
+
+    <table style="margin: 0 auto; border:1px solid black; border-collapse:collapse;">
+        <tr>
+            <td colspan="8" style="text-align: center;">Lista de Dentistas</td>
+        </tr>
+
+        <tr>
+            <th>#</th>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>CRO</th>
+           
+            <th colspan="2">Ações</th>
+        </tr>
+        <tr th:each="dentista: ${dentistas}">
+            <td th:text="${dentista.idDentista}"></td>
+            <td th:text="${dentista.nomeDentista}"></td>
+            <td th:text="${dentista.telefoneDentista}"></td>
+            <td th:text="${dentista.croDentista}"></td>
+            
+            <td>
+                <a th:href="@{/dentistas/editar/{id}(id=${dentista.idDentista})}"><i class="fas fa-edit"></i>Editar</a>
+                <a th:href="@{/dentistas/excluir/{id}(id=${dentista.idDentista})}"><i class="fas fa-trash"></i>Excluir</a>
+            </td>
+            
+
+
+        </tr>
+
+    </table>
+
+    <a href="/clinica">Voltar</a>
+    
+</body>
+</html>
