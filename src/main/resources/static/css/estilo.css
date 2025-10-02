@@ -1,147 +1,137 @@
-*{
+/* RESET básico */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
-body{
-    background-color: #F2F2F2;
-    padding: 40px;
+/* Corpo da página */
+body {
+    background-color: #f2f6f8;
     color: #333;
+    padding: 20px;
 }
 
-h1,h3{
+/* Títulos */
+h1 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     color: #2c3e50;
 }
 
-h3 a{
+h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Links */
+a {
     text-decoration: none;
-    color: #3498db;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-h3 a:hover{
     color: #2980b9;
+    transition: color 0.3s;
 }
 
-form{
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 30px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+a:hover {
+    color: #1c5980;
 }
 
-label{
-    display: block;
-    margin-bottom: 6px;
-    font-weight: 500;
-}
-
-input[type="text"],
-input[type="hidden"] {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  transition: border-color 0.3s;
-}
-
-input:focus {
-    border-color: #3498db;
-    outline: none;
-  }
-
-
-  button[type="submit"] {
-    display: inline-block;
-    width: 100%;
-    padding: 14px;
-    background-color: #3498db;
+/* Botões */
+button {
+    background-color: #27ae60;
     color: white;
     border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+    transition: background-color 0.3s;
+}
 
-  button[type="submit"]:hover {
-    background-color: #2980b9;
-  }
+button:hover {
+    background-color: #1e8449;
+}
 
-  table{
-    width: 90%;
-    max-width: 900px;
-    margin: 0 auto;
+/* Formulários */
+form {
+    background-color: white;
+    padding: 20px;
+    margin: 0 auto 30px auto;
+    width: 400px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.15);
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+/* Inputs padronizados para texto e número */
+form input, form number {
+    width: 100%;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    /* Remove setinhas de input number */
+    -moz-appearance: none; 
+    appearance: none;
+}
+
+/* Remove setinhas do type number no Chrome, Edge e Safari */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+/* Tabelas */
+table {
+    width: 80%;
+    margin: 0 auto 30px auto;
     border-collapse: collapse;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    background-color: #fff;
+    background-color: white;
     border-radius: 8px;
     overflow: hidden;
-  }
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+}
 
-  table tr:first-child td {
-    background-color: #3498db;
-    color: white;
-    font-weight: 700;
-    text-align: center;
-    font-size: 1.2rem;
-    padding: 15px;
-    border-bottom: 2px solid #2980b9;
-  }
-
-  th {
-    background-color: #2980b9;
-    color: #fff;
-    padding: 12px 15px;
-    font-weight: 600;
+table th, table td {
+    padding: 10px 15px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
+    border-bottom: 1px solid #eee;
+}
 
-  tr {
-    border-bottom: 1px solid #ddd;
-  }
+table th {
+    background-color: #2980b9;
+    color: white;
+}
 
-  tr:hover {
-    background-color: #f1f8ff;
-  }
+table tr:hover {
+    background-color: #f1f1f1;
+}
 
-  td {
-    padding: 12px 15px;
-  }
+/* Pequeno espaçamento para links dentro da tabela */
+table a {
+    margin-right: 10px;
+}
 
-  td a {
-    margin-right: 12px;
-    text-decoration: none;
-    color: #3498db;
-    font-weight: 600;
-    transition: color 0.3s ease;
-  }
+/* Link "Voltar" */
+body > a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
 
-  td a:hover {
-    color: #1d6fa5;
-  }
-
-  i{
-    margin-right: 8px;
-  }
-
-  .voltar Link{
-    text-decoration: none;
-    color: #1d6fa5;
-    font-size: 16px;
-    padding: 8px 16px;
+form input[type=number] {
+    width: 100%;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-  }
-    
 
-  
+    /* Remove setinhas de input number */
+    -moz-appearance: textfield; 
+    appearance: textfield;
+}

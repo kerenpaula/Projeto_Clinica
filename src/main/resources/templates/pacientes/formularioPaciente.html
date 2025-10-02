@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacientes</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+</head>
+<body>
+    <h1>Formulário de Pacientes</h1>
+    <form th:action="@{/pacientes/salvar}" method="post" th:object="${paciente}">
+    <input type="hidden" th:field="*{idPaciente}" readonly />
+
+    <label>Nome:</label>
+    <input type="text" th:field="*{nomePaciente}" required />
+    <br/>
+
+    <label>Telefone:</label>
+    <input type="text" th:field="*{telefonePaciente}" required />
+    <br/>
+
+    <label>CPF:</label>
+    <input type="text" th:field="*{cpfPaciente}" required />
+    <br/>
+
+    <label>Idade:</label>
+    <input type="number" th:field="*{idadePaciente}" />
+    <br/>
+
+    <button type="submit">Salvar</button>
+</form>
+
+</body>
+</html>

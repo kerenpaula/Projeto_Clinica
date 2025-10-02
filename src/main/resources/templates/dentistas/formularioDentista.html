@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Cadastro de Dentistas</h1>
-    <form th:action="@{/consultas/salvar}" method="post" th:object="${consulta}">
+    <form th:action="@{/dentistas/salvar}" method="post" th:object="${dentista}">
          <input type="hidden" name="idDentista" th:field="*{idDentista}" readonly />
          
 
@@ -21,7 +21,7 @@
          <br />
 
          <label for="croDentista">croDentista:</label>
-         <input type="text" name="croDentista" th:field="*{croDentista}" />
+         <input type="number" name="croDentista" th:field="*{croDentista}" />
          <br />
          
          <br />
